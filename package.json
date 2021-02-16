@@ -1,0 +1,8 @@
+{
+  "name": "@hearthsim/eslint-config-typescript",
+  "version": "0.1.0",
+  "description": "HearthSim's presets for ESLint, with Typescript support.",
+  "repository": "git@github.com:HearthSim/eslint-config-typescript.git",
+  "author": "Benedict Etzel <benedict@hearthsim.net>",
+  "license": "ISC"
+}
