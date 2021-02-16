@@ -5,5 +5,8 @@
   "repository": "git@github.com:HearthSim/eslint-config-typescript.git",
   "author": "Benedict Etzel <benedict@hearthsim.net>",
   "homepage": "https://github.com/HearthSim/eslint-config-typescript#readme",
-  "license": "ISC"
+  "license": "ISC",
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+  }
 }
