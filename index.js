@@ -52,11 +52,15 @@ module.exports = {
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		// replaced by no-unused-imports, which can also handle typescript
 		"@typescript-eslint/no-unused-vars": "off",
+		// while these aren't great, if someone explicitly uses them let's allow them
+		"@typescript-eslint/ban-ts-comment": "off",
 		// no case declarations are not necessarily a bug, however they can lead to misused variables
 		"no-case-declarations": "warn",
 		"no-empty-pattern": "warn",
 		// we're pretty lenient on these, and they can help tighten types
 		"no-extra-boolean-cast": "off",
+		// these are usually not great, but let's not fully forbid them
+		"no-constant-condition": "warn",
 		// consts are generally preferred in this case
 		"prefer-const": "warn",
 		// mostly used for auto-fixing
@@ -71,8 +75,9 @@ module.exports = {
 		// not great, but otherwise we get false positives with <Trans> (localization)
 		"react/jsx-key": "warn",
 		// The following rule is very sensible, enforcing noopener is critical. However, we're usually okay with
-		// exposing the referrer. Unfortunately it can't handle styled-components anchors.
-		"react/jsx-no-target-blank": ["error", {
+		// exposing the referrer. Unfortunately it can't handle styled-components anchors, and cannot always detect
+		// internal links.
+		"react/jsx-no-target-blank": ["warn", {
 			"allowReferrer": true
 		}],
 		// our build chain can handle literals
