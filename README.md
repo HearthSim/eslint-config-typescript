@@ -17,7 +17,7 @@ Plugins are resolved relative to the final project and must thus installed expli
 $ yarn add -D eslint-plugin-prettier@^3.3.1 \
               eslint-plugin-react@^7.22.0 \
               eslint-plugin-react-hooks@^4.2.0 \
-              eslint-plugin-unused-imports@^1.1.0 \
+              eslint-plugin-import@^2.22.1 \
               eslint-plugin-jest@^24.1.3 \
               @typescript-eslint/eslint-plugin@^4.15.1
 ```

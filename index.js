@@ -7,6 +7,9 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
 		"plugin:jest/recommended",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
@@ -57,7 +60,7 @@ module.exports = {
 		"@typescript-eslint/no-empty-function": "off",
 		// we're not so strict on external module exports and trust typescript's interference here
 		"@typescript-eslint/explicit-module-boundary-types": "off",
-		// replaced by no-unused-imports, which can also handle typescript
+		// too noisy for now
 		"@typescript-eslint/no-unused-vars": "off",
 		// while these aren't great, if someone explicitly uses them let's allow them
 		"@typescript-eslint/ban-ts-comment": "off",
@@ -70,13 +73,11 @@ module.exports = {
 		"no-constant-condition": "warn",
 		// consts are generally preferred in this case
 		"prefer-const": "warn",
-		// mostly used for auto-fixing
-		"unused-imports/no-unused-imports": "warn",
-		"unused-imports/no-unused-vars": ["warn", {
-			varsIgnorePattern: "^_",
-			argsIgnorePattern: "^_",
-			caughtErrorsIgnorePattern: "^_",
-		}],
+		// can't deal with aliases
+		"import/no-unresolved": "off",
+		// need to understand this besser
+		"import/no-named-as-default": "off",
+		"import/default": "warn",
 		// we don't use this
 		"react/display-name": "off",
 		// not great, but otherwise we get false positives with <Trans> (localization)
