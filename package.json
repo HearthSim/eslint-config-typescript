@@ -7,6 +7,22 @@
   "homepage": "https://github.com/HearthSim/eslint-config-typescript#readme",
   "license": "ISC",
   "peerDependencies": {
-    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-unused-imports": "^1.1.0",
+    "prettier": ">=2.0.0",
+    "typescript": ">=2.8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint-config-prettier": "^7.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "typescript": "^4.0.0"
   }
 }
