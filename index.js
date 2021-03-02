@@ -1,7 +1,7 @@
 module.exports = {
 	plugins: [
 		"@typescript-eslint",
-		"unused-imports",
+		"import",
 		"jest",
 	],
 	extends: [
