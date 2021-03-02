@@ -26,6 +26,13 @@ module.exports = {
 				// require is allowed in js, as we may not have import available
 				"@typescript-eslint/no-var-requires": "off",
 			}
+		},
+		{
+			files: ["**/*/*.spec.js", "**/*/*.spec.ts", "**/*/*.spec.tsx"],
+			rules: {
+				// enforce describe around "it" blocks
+				"jest/require-top-level-describe": "error",
+			},
 		}
 	],
 	rules: {
@@ -94,6 +101,11 @@ module.exports = {
 		"jest/valid-expect": "error",
 		// a bad title with e.g. a space at the end is okay, but rather warn
 		"jest/valid-title": "warn",
+		// we prefer "it" over "test"
+		"jest/consistent-test-it": ["warn", {"fn": "it"}],
+		"jest/lowercase-name": ["warn", { "ignoreTopLevelDescribe": true }],
+		"jest/prefer-to-contain": "warn",
+		"jest/prefer-to-have-length": "warn",
 	}
 };
 
