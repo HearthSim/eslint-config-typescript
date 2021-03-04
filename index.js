@@ -71,6 +71,8 @@ module.exports = {
 		"no-extra-boolean-cast": "off",
 		// these are usually not great, but let's not fully forbid them
 		"no-constant-condition": "warn",
+		// prettier compat
+		"no-tabs": ["warn", {"allowIndentationTabs": true}],
 		// consts are generally preferred in this case
 		"prefer-const": "warn",
 		// these next for rules are done by typescript anyway, so not required
