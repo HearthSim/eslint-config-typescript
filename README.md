@@ -28,9 +28,6 @@ Create or update your`.eslintrc.js`:
 ```js
 module.exports = {
 	extends: ["@hearthsim/eslint-config-typescript"],
-	parserOptions: {
-		project: "./tsconfig.json",
-	},
 	env: {
 		browser: true,
 	},
