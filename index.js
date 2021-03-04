@@ -73,11 +73,18 @@ module.exports = {
 		"no-constant-condition": "warn",
 		// consts are generally preferred in this case
 		"prefer-const": "warn",
+		// these next for rules are done by typescript anyway, so not required
+		"import/named": "off",
+		"import/namespace": "off",
+		"import/default": "off",
+		"import/no-named-as-default-member": "off",
+		// these are just too expensive
+		"import/no-named-as-default": "off",
+		"import/no-cycle": "off",
+		"import/no-unused-modules": "off",
+		"import/no-deprecated": "off",
 		// can't deal with aliases
 		"import/no-unresolved": "off",
-		// need to understand this besser
-		"import/no-named-as-default": "off",
-		"import/default": "warn",
 		// we don't use this
 		"react/display-name": "off",
 		// not great, but otherwise we get false positives with <Trans> (localization)
