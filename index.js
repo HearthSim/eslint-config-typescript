@@ -1,9 +1,5 @@
 module.exports = {
-	plugins: [
-		"@typescript-eslint",
-		"import",
-		"jest",
-	],
+	plugins: ["@typescript-eslint", "import", "jest"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
@@ -15,12 +11,12 @@ module.exports = {
 		"plugin:react-hooks/recommended",
 		// prettier always need to be last
 		"prettier",
-		"prettier/@typescript-eslint"
+		"prettier/@typescript-eslint",
 	],
 	settings: {
 		react: {
-			version: "detect"
-		}
+			version: "detect",
+		},
 	},
 	overrides: [
 		{
@@ -28,7 +24,7 @@ module.exports = {
 			rules: {
 				// require is allowed in js, as we may not have import available
 				"@typescript-eslint/no-var-requires": "off",
-			}
+			},
 		},
 		{
 			files: ["**/*/*.spec.js", "**/*/*.spec.ts", "**/*/*.spec.tsx"],
@@ -36,17 +32,19 @@ module.exports = {
 				// enforce describe around "it" blocks
 				"jest/require-top-level-describe": "error",
 			},
-		}
+		},
 	],
 	rules: {
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/no-empty-interface": "warn",
 		"@typescript-eslint/ban-types": [
-			"warn", {
+			"warn",
+			{
 				types: {
 					"{}": {
-						"message": "If you're trying to do something like React.FC<{}>, use React.FC instead",
+						message:
+							"If you're trying to do something like React.FC<{}>, use React.FC instead",
 					},
 				},
 				extendDefaults: true,
@@ -65,7 +63,7 @@ module.exports = {
 		// while these aren't great, if someone explicitly uses them let's allow them
 		"@typescript-eslint/ban-ts-comment": "off",
 		// functions should be kept compact and logical
-		"max-lines-per-function": ["warn", {"max": 200}],
+		"max-lines-per-function": ["warn", { max: 200 }],
 		// no case declarations are not necessarily a bug, however they can lead to misused variables
 		"no-case-declarations": "warn",
 		"no-empty-pattern": "warn",
@@ -74,7 +72,7 @@ module.exports = {
 		// these are usually not great, but let's not fully forbid them
 		"no-constant-condition": "warn",
 		// prettier compat
-		"no-tabs": ["warn", {"allowIndentationTabs": true}],
+		"no-tabs": ["warn", { allowIndentationTabs: true }],
 		// consts are generally preferred in this case
 		"prefer-const": "warn",
 		// these next for rules are done by typescript anyway, so not required
@@ -96,9 +94,12 @@ module.exports = {
 		// The following rule is very sensible, enforcing noopener is critical. However, we're usually okay with
 		// exposing the referrer. Unfortunately it can't handle styled-components anchors, and cannot always detect
 		// internal links.
-		"react/jsx-no-target-blank": ["warn", {
-			"allowReferrer": true
-		}],
+		"react/jsx-no-target-blank": [
+			"warn",
+			{
+				allowReferrer: true,
+			},
+		],
 		// our build chain can handle literals
 		"react/no-unescaped-entities": "off",
 		// doesn't work reliably with typescript (`FC<Props>` vs. `{} :Props`)
@@ -114,10 +115,9 @@ module.exports = {
 		// a bad title with e.g. a space at the end is okay, but rather warn
 		"jest/valid-title": "warn",
 		// we prefer "it" over "test"
-		"jest/consistent-test-it": ["warn", {"fn": "it"}],
-		"jest/lowercase-name": ["warn", { "ignoreTopLevelDescribe": true }],
+		"jest/consistent-test-it": ["warn", { fn: "it" }],
+		"jest/lowercase-name": ["warn", { ignoreTopLevelDescribe: true }],
 		"jest/prefer-to-contain": "warn",
 		"jest/prefer-to-have-length": "warn",
-	}
+	},
 };
-
