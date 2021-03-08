@@ -31,6 +31,8 @@ module.exports = {
 			rules: {
 				// enforce describe around "it" blocks
 				"jest/require-top-level-describe": "error",
+				// describe/it blocks will always breaks this
+				"max-lines-per-function": "off",
 			},
 		},
 	],
