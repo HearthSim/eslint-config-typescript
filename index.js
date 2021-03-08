@@ -65,7 +65,7 @@ module.exports = {
 		// while these aren't great, if someone explicitly uses them let's allow them
 		"@typescript-eslint/ban-ts-comment": "off",
 		// functions should be kept compact and logical
-		"max-lines-per-function": ["warn", { max: 200 }],
+		"max-lines-per-function": ["warn", { max: 200, skipComments: true }],
 		// no case declarations are not necessarily a bug, however they can lead to misused variables
 		"no-case-declarations": "warn",
 		"no-empty-pattern": "warn",
