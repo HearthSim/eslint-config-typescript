@@ -1,12 +1,11 @@
 module.exports = {
-	plugins: ["@typescript-eslint", "import", "jest"],
+	plugins: ["@typescript-eslint", "import"],
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:import/errors",
 		"plugin:import/warnings",
 		"plugin:import/typescript",
-		"plugin:jest/recommended",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		// prettier always need to be last
@@ -27,12 +26,29 @@ module.exports = {
 			},
 		},
 		{
-			files: ["**/*/*.spec.js", "**/*/*.spec.ts", "**/*/*.spec.tsx"],
+			files: ["**/*/*.spec.js", "**/*/*.spec.jsx", "**/*/*.spec.ts", "**/*/*.spec.tsx"],
+			plugins: ["jest"],
+			extends: [
+				"plugin:jest/recommended",
+			],
 			rules: {
-				// enforce describe around "it" blocks
-				"jest/require-top-level-describe": "error",
 				// describe/it blocks will always breaks this
 				"max-lines-per-function": "off",
+				// enforce describe around "it" blocks
+				"jest/require-top-level-describe": "error",
+				// acceptable as long as it's only imported from other tests
+				"jest/no-export": "warn",
+				// the following warning catches errors like
+				//   `expect(button.props().href === "/test");`
+				// and is thus an error
+				"jest/valid-expect": "error",
+				// a bad title with e.g. a space at the end is okay, but rather warn
+				"jest/valid-title": "warn",
+				// we prefer "it" over "test"
+				"jest/consistent-test-it": ["warn", { fn: "it" }],
+				"jest/lowercase-name": ["warn", { ignoreTopLevelDescribe: true }],
+				"jest/prefer-to-contain": "warn",
+				"jest/prefer-to-have-length": "warn",
 			},
 		},
 	],
@@ -108,18 +124,5 @@ module.exports = {
 		"react/prop-types": "off",
 		// we shouldn't usually have to worry about this
 		"react/react-in-jsx-scope": "off",
-		// acceptable as long as it's only imported from other tests
-		"jest/no-export": "warn",
-		// the following warning catches errors like
-		//   `expect(button.props().href === "/test");`
-		// and is thus an error
-		"jest/valid-expect": "error",
-		// a bad title with e.g. a space at the end is okay, but rather warn
-		"jest/valid-title": "warn",
-		// we prefer "it" over "test"
-		"jest/consistent-test-it": ["warn", { fn: "it" }],
-		"jest/lowercase-name": ["warn", { ignoreTopLevelDescribe: true }],
-		"jest/prefer-to-contain": "warn",
-		"jest/prefer-to-have-length": "warn",
 	},
 };
