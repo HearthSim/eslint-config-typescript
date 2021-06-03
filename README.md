@@ -26,6 +26,7 @@ $ yarn add -D eslint-plugin-react@^7.22.0 \
 Create or update your`.eslintrc.js`:
 ```js
 module.exports = {
+	root: true,
 	extends: ["@hearthsim/eslint-config-typescript"],
 	env: {
 		browser: true,
