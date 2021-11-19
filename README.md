@@ -19,7 +19,7 @@ $ yarn add -D \
               eslint-plugin-import@2.25.3 \
               eslint-plugin-jest@25.2.4 \
               eslint-plugin-react@7.27.1 \
-              eslint-plugin-react-hooks@4.3.0 \
+              eslint-plugin-react-hooks@4.3.0
 ```
 
 3. Configure ESLint:
