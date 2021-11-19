@@ -45,7 +45,7 @@ module.exports = {
 				"jest/valid-title": "warn",
 				// we prefer "it" over "test"
 				"jest/consistent-test-it": ["warn", { fn: "it" }],
-				"jest/lowercase-name": ["warn", { ignoreTopLevelDescribe: true }],
+				"jest/prefer-lowercase-title": ["warn", { ignoreTopLevelDescribe: true }],
 				"jest/prefer-to-contain": "warn",
 				"jest/prefer-to-have-length": "warn",
 			},
