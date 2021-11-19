@@ -1,6 +1,6 @@
 # @hearthsim/eslint-config-typescript
 
-This repository contains the HearthSim common ESLint configuration.
+This repository contains the HearthSim common ESLint configuration with Typescript and React support.
 
 ## Setup
 
