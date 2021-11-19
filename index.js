@@ -10,7 +10,6 @@ module.exports = {
 		"plugin:react-hooks/recommended",
 		// prettier always need to be last
 		"prettier",
-		"prettier/@typescript-eslint",
 	],
 	settings: {
 		react: {
