@@ -1,6 +1,8 @@
 # @hearthsim/eslint-config-typescript
 
-This repository contains the HearthSim common ESLint configuration with Typescript and React support.
+This repository contains the HearthSim common ESLint configuration with Typescript support.
+
+For included React support use [@HearthSim/eslint-config-typescript-react](https://github.com/HearthSim/eslint-config-typescript-react) instead.
 
 ## Setup
 
@@ -17,9 +19,7 @@ Plugins are resolved relative to the final project and must thus installed expli
 $ yarn add -D \
               @typescript-eslint/eslint-plugin@5.4.0 \
               eslint-plugin-import@2.25.3 \
-              eslint-plugin-jest@25.2.4 \
-              eslint-plugin-react@7.27.1 \
-              eslint-plugin-react-hooks@4.3.0
+              eslint-plugin-jest@25.2.4
 ```
 
 3. Configure ESLint:
