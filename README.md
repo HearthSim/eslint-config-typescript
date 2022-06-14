@@ -4,6 +4,32 @@ This repository contains the HearthSim common ESLint configuration with Typescri
 
 For included React support use [@HearthSim/eslint-config-typescript-react](https://github.com/HearthSim/eslint-config-typescript-react) instead.
 
+## Upgrading from v1
+
+In versions v2.0.0 and later the React and React Hooks rules have moved to a separate package [@HearthSim/eslint-config-typescript-react](https://github.com/HearthSim/eslint-config-typescript-react).
+It can be used as a drop-in replacement for v1 of @hearthsim/eslint-config-typescript (without -react).
+
+To switch to the new package:
+
+1. Remove this package:
+```bash
+$ yarn remove @hearthsim/eslint-config-typescript
+```
+
+2. Install the new React package:
+```bash
+$ yarn add -D @hearthsim/eslint-config-typescript-react
+```
+
+3. Update your`.eslintrc.js`:
+```js
+module.exports = {
+	//...
+	extends: ["@hearthsim/eslint-config-typescript-react"],
+	//...
+};
+```
+
 ## Setup
 
 1. Install
