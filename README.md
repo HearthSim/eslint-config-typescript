@@ -43,7 +43,7 @@ Plugins are resolved relative to the final project and must thus installed expli
 
 ```bash
 $ yarn add -D \
-              @typescript-eslint/eslint-plugin@5.4.0 \
+              @typescript-eslint/eslint-plugin@^5.4.0 \
               eslint-plugin-import@2.25.3 \
               eslint-plugin-jest@25.2.4
 ```
