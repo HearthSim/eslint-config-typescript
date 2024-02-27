@@ -24,8 +24,6 @@ module.exports = {
 				"plugin:jest/recommended",
 			],
 			rules: {
-				// describe/it blocks will always breaks this
-				"max-lines-per-function": "off",
 				// enforce describe around "it" blocks
 				"jest/require-top-level-describe": "error",
 				// acceptable as long as it's only imported from other tests
@@ -72,8 +70,6 @@ module.exports = {
 		"@typescript-eslint/no-unused-vars": "off",
 		// while these aren't great, if someone explicitly uses them let's allow them
 		"@typescript-eslint/ban-ts-comment": "off",
-		// functions should be kept compact and logical
-		"max-lines-per-function": ["warn", { max: 200, skipComments: true }],
 		// no case declarations are not necessarily a bug, however they can lead to misused variables
 		"no-case-declarations": "warn",
 		"no-empty-pattern": "warn",
