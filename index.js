@@ -45,8 +45,9 @@ module.exports = {
 	rules: {
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/no-empty-interface": "warn",
-		"@typescript-eslint/ban-types": [
+		// allowObjectTypes is off here since bare `{}` is instead handled below with our custom message
+		"@typescript-eslint/no-empty-object-type": ["warn", { allowObjectTypes: "always" }],
+		"@typescript-eslint/no-restricted-types": [
 			"warn",
 			{
 				types: {
@@ -55,7 +56,6 @@ module.exports = {
 							"If you're trying to do something like React.FC<{}>, use React.FC instead",
 					},
 				},
-				extendDefaults: true,
 			},
 		],
 		// non-null assertions aren't great, but sometimes a last resort
