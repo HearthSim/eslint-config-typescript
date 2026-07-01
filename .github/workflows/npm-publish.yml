@@ -22,6 +22,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install -g npm@latest
       - run: yarn install --frozen-lockfile
-      - run: npx semantic-release
+      - run: npx --package semantic-release --package conventional-changelog-conventionalcommits semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
