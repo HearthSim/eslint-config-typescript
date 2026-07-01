@@ -14,7 +14,7 @@ module.exports = {
 			files: ["**/*.js", "**/*.jsx"],
 			rules: {
 				// require is allowed in js, as we may not have import available
-				"@typescript-eslint/no-var-requires": "off",
+				"@typescript-eslint/no-require-imports": "off",
 			},
 		},
 		{
