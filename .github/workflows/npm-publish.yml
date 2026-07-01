@@ -2,31 +2,26 @@ name: Publish to NPM
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: yarn install --frozen-lockfile
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
       - run: npm install -g npm@latest
-      - run: npm publish --access public
+      - run: yarn install --frozen-lockfile
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
